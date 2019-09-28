@@ -8,15 +8,14 @@ export default function EmailForm(props) {
   function handlePress() {
     setEmail(email)
       .then(() => {
-        Alert.alert(
-          "Your email has been updated successfully",
-          "Email updated"[{ text: "OK" }]
-        );
+        Alert.alert("Your email has been updated successfully", "", [
+          { text: "OK" }
+        ]);
         props.onSetEmail();
       })
       .catch(error => {
         console.error(error);
-        Alert.alert("Invalid email!", "Invalid email!"[{ text: "OK" }]);
+        Alert.alert("Invalid email!", "", [{ text: "OK" }]);
       });
   }
 

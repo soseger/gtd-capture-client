@@ -19,8 +19,8 @@ export default class App extends Component {
         this.setState({ email: email, loaded: true });
       })
       .catch(error => {
-        // TODO: Implement and show ErrorPanel or so
         console.error(error);
+        Alert.alert("Couldn't fetch email!", "", [{ text: "OK" }]);
       });
   }
 
