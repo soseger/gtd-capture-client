@@ -29,7 +29,7 @@ export default class App extends Component {
     if (email) {
       return <NavContainer />;
     } else if (loaded && !email) {
-      return <SetupView />;
+      return <SetupView onSetEmail={this.forceUpdate} />;
     } else {
       return <ActivityIndicator size="large" color="blue" />;
     }
