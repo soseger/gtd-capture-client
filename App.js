@@ -31,14 +31,18 @@ export default class App extends Component {
         <NavContainer
           screenProps={{
             email: email,
-            onSetEmail: this.forceUpdate
+            onSetEmail: this.rerender
           }}
         />
       );
     } else if (loaded && !email) {
-      return <SetupView onSetEmail={this.forceUpdate} />;
+      return <SetupView onSetEmail={this.rerender} />;
     } else {
       return <ActivityIndicator size="large" color="blue" />;
     }
   }
+
+  rerender = () => {
+    this.setState(this.state);
+  };
 }
