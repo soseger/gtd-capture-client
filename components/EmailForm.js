@@ -1,14 +1,18 @@
 import React from "react";
-import { Button, TextInput, View } from "react-native";
+import { Alert, Button, TextInput, View } from "react-native";
 import { setEmail } from "../utils/Store";
 
-export default function EmailForm({ onSetEmail }) {
-  const [email, onEmailChange] = React.useState("");
+export default function EmailForm(props) {
+  const [email, onEmailChange] = React.useState(props.email);
 
   function handlePress() {
     setEmail(email)
       .then(() => {
-        onSetEmail();
+        Alert.alert(
+          "Your email has been updated successfully",
+          "Email updated"[{ text: "OK" }]
+        );
+        props.onSetEmail();
       })
       .catch(error => {
         // TODO: Implement and show ErrorPanel or so

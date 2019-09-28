@@ -27,7 +27,14 @@ export default class App extends Component {
   render() {
     const { email, loaded } = this.state;
     if (email) {
-      return <NavContainer />;
+      return (
+        <NavContainer
+          screenProps={{
+            email: email,
+            onSetEmail: this.forceUpdate
+          }}
+        />
+      );
     } else if (loaded && !email) {
       return <SetupView onSetEmail={this.forceUpdate} />;
     } else {
