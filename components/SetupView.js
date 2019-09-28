@@ -1,30 +1,12 @@
 import React from "react";
-import { Button, Text, TextInput, View } from "react-native";
-import { setEmail } from "../utils/Store";
+import { Text, View } from "react-native";
+import EmailForm from "./EmailForm";
 
 export default function SetupView({ onSetEmail }) {
-  const [email, onEmailChange] = React.useState("");
-
-  function handlePress() {
-    setEmail(email)
-      .then(() => {
-        onSetEmail();
-      })
-      .catch(error => {
-        // TODO: Implement and show ErrorPanel or so
-        console.error;
-      });
-  }
-
   return (
     <View>
       <Text>Get started!</Text>
-      <TextInput
-        placeholder="Type your email here"
-        onChangeText={text => onEmailChange(text)}
-        value={email}
-      />
-      <Button title="Save" onPress={handlePress} />
+      <EmailForm onSetEmail={onSetEmail} />
     </View>
   );
 }
