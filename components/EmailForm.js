@@ -15,8 +15,8 @@ export default function EmailForm(props) {
         props.onSetEmail();
       })
       .catch(error => {
-        // TODO: Implement and show ErrorPanel or so
-        console.error;
+        console.error(error);
+        Alert.alert("Invalid email!", "Invalid email!"[{ text: "OK" }]);
       });
   }
 
