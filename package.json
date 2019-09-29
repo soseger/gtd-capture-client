@@ -24,7 +24,9 @@
     "react-navigation-tabs": "2.5.5"
   },
   "devDependencies": {
-    "babel-preset-expo": "7.0.0"
+    "babel-preset-expo": "7.0.0",
+    "metro-react-native-babel-preset": "0.56.0",
+    "react-native-dotenv": "0.2.0"
   },
   "private": true
 }
