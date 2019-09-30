@@ -1,6 +1,6 @@
-import React from "react";
-import { Alert, Button, TextInput, View } from "react-native";
-import { setEmail } from "../utils/Store";
+import React from 'react';
+import { Alert, Button, StyleSheet, TextInput, View } from 'react-native';
+import { setEmail } from '../utils/Store';
 
 export default function EmailForm(props) {
   const [email, onEmailChange] = React.useState(props.email);
@@ -8,20 +8,21 @@ export default function EmailForm(props) {
   function handlePress() {
     setEmail(email)
       .then(() => {
-        Alert.alert("Your email has been updated successfully", "", [
-          { text: "OK" }
+        Alert.alert('Your email has been updated successfully', '', [
+          { text: 'OK' }
         ]);
         props.onSetEmail();
       })
       .catch(error => {
         console.error(error);
-        Alert.alert("Invalid email!", "", [{ text: "OK" }]);
+        Alert.alert('Invalid email!', '', [{ text: 'OK' }]);
       });
   }
 
   return (
     <View>
       <TextInput
+        style={styles.textStyle}
         placeholder="Type your email here"
         onChangeText={text => onEmailChange(text)}
         value={email}
@@ -30,3 +31,12 @@ export default function EmailForm(props) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  textStyle: {
+    fontSize: 18,
+    padding: 15,
+    textAlign: 'center',
+    color: 'blue'
+  }
+});

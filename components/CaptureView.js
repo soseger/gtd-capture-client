@@ -1,8 +1,9 @@
 import React from 'react';
-import { Alert, Button, TextInput, Text, View } from 'react-native';
+import { Alert, Button, StyleSheet, TextInput, Text, View } from 'react-native';
 import axios from 'axios';
 import config from '../config';
 import { API_SECRET } from 'react-native-dotenv';
+import Header from './Header';
 
 export default function CaptureView({ screenProps }) {
   const [message, onMessageChange] = React.useState('');
@@ -31,13 +32,33 @@ export default function CaptureView({ screenProps }) {
 
   return (
     <View>
-      <Text>GET THINGS DONE</Text>
-      <TextInput
-        placeholder="Type something"
-        onChangeText={text => onMessageChange(text)}
-        value={message}
-      />
-      <Button title="Send" onPress={handlePress} />
+      <Header title="NEW TO-DO" />
+      <View style={styles.inputStyle}>
+        <TextInput
+          style={styles.textStyle}
+          placeholder="Type something"
+          onChangeText={text => onMessageChange(text)}
+          value={message}
+        />
+      </View>
+      <Button style={styles.buttonStyle} title="Send" onPress={handlePress} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  buttonStyle: {
+    backgroundColor: 'blue',
+    height: 20,
+    justifyContent: 'center'
+  },
+  inputStyle: {
+    height: 300,
+    borderColor: 'gray',
+    borderRadius: 10
+  },
+  textStyle: {
+    fontSize: 16,
+    padding: 15
+  }
+});
