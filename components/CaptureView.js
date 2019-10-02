@@ -31,34 +31,40 @@ export default function CaptureView({ screenProps }) {
   }
 
   return (
-    <View>
-      <Header title="NEW TO-DO" />
+    <View style={styles.mainStyle}>
+      <Header title='NEW TO-DO' />
       <View style={styles.inputStyle}>
         <TextInput
           style={styles.textStyle}
-          placeholder="Type something"
+          placeholder='Type something'
           onChangeText={text => onMessageChange(text)}
           value={message}
         />
       </View>
-      <Button style={styles.buttonStyle} title="Send" onPress={handlePress} />
+      <Button style={styles.buttonStyle} title='Send' onPress={handlePress} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  buttonStyle: {
-    backgroundColor: 'blue',
-    height: 20,
-    justifyContent: 'center'
+  mainStyle: {
+    alignItems: 'center'
   },
   inputStyle: {
     height: 300,
-    borderColor: 'gray',
-    borderRadius: 10
+    width: 300,
+    borderWidth: 1,
+    borderColor: 'gainsboro',
+    borderRadius: 5,
+    marginBottom: 32
   },
   textStyle: {
     fontSize: 16,
     padding: 15
+  },
+  buttonStyle: {
+    backgroundColor: 'blue',
+    height: 20,
+    justifyContent: 'center'
   }
 });

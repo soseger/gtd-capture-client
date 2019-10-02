@@ -15,11 +15,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 40,
     textAlign: 'center',
-    fontFamily: 'MarkerFelt-Wide'
+    fontFamily: 'MarkerFelt-Wide',
+    marginTop: 30
   },
   viewStyle: {
     backgroundColor: 'white',
-    height: 150,
+    height: 160,
     justifyContent: 'center'
   }
 });
