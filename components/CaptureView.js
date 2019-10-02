@@ -41,7 +41,9 @@ export default function CaptureView({ screenProps }) {
           value={message}
         />
       </View>
-      <Button style={styles.buttonStyle} title='Send' onPress={handlePress} />
+      <View style={styles.buttonStyle}>
+        <Button title='Send' color='white' onPress={handlePress} />
+      </View>
     </View>
   );
 }
@@ -64,7 +66,9 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     backgroundColor: 'blue',
-    height: 20,
+    width: 90,
+    height: 40,
+    borderRadius: 20,
     justifyContent: 'center'
   }
 });
