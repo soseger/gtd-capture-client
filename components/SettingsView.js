@@ -6,9 +6,9 @@ import Header from './Header';
 export default function SettingsView({ screenProps }) {
   return (
     <View>
-      <Header title="SETTINGS" />
-      <View style={styles.inputStyle}>
-        <Text style={styles.textStyle}>
+      <Header title='SETTINGS' />
+      <View style={styles.input}>
+        <Text style={styles.text}>
           Update your email over here, current one is:
         </Text>
         <EmailForm
@@ -21,12 +21,12 @@ export default function SettingsView({ screenProps }) {
 }
 
 const styles = StyleSheet.create({
-  inputStyle: {
+  input: {
     height: 300,
     borderColor: 'gray',
     borderRadius: 10
   },
-  textStyle: {
+  text: {
     fontSize: 16,
     padding: 15,
     color: 'gray',

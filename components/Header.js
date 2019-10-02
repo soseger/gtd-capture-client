@@ -3,14 +3,14 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function Header({ title }) {
   return (
-    <View style={styles.viewStyle}>
-      <Text style={styles.headerStyle}>{title}</Text>
+    <View style={styles.view}>
+      <Text style={styles.header}>{title}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  headerStyle: {
+  header: {
     color: 'black',
     fontWeight: 'bold',
     fontSize: 40,
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     fontFamily: 'MarkerFelt-Wide',
     marginTop: 30
   },
-  viewStyle: {
+  view: {
     backgroundColor: 'white',
     height: 160,
     justifyContent: 'center'
