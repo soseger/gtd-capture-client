@@ -20,23 +20,35 @@ export default function EmailForm(props) {
   }
 
   return (
-    <View>
+    <View style={styles.main}>
       <TextInput
-        style={styles.textStyle}
-        placeholder="Type your email here"
+        style={styles.text}
+        placeholder='Type your email here'
         onChangeText={text => onEmailChange(text)}
         value={email}
       />
-      <Button title="Save" onPress={handlePress} />
+      <View style={styles.button}>
+        <Button title='Save' color='white' onPress={handlePress} />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  textStyle: {
+  main: {
+    alignItems: 'center'
+  },
+  text: {
     fontSize: 18,
     padding: 15,
-    textAlign: 'center',
-    color: 'blue'
+    color: 'blue',
+    marginBottom: 25
+  },
+  button: {
+    backgroundColor: 'blue',
+    width: 90,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: 'center'
   }
 });
